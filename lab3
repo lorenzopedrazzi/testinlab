@@ -25,6 +25,67 @@ root.mainloop()
 
 
 ES2 
+import tkinter
+
+
+from tkinter import *
+from tkinter import ttk
+from random import randint
+
+root = Tk()
+root.title("Colori")
+colore = StringVar()
+def cambiorosso ():
+    l.configure(background = 'red')
+def cambioviola ():
+  l.configure(background = 'purple')
+def cambionero ():
+  l.configure(background = 'black')
+def cambioverde ():
+  l.configure(background = 'green')
+
+
+l = ttk.Label(root)
+b = ttk.Button(root, command= cambiorosso, text='Rosso')
+c = ttk.Button(root, command = cambioviola, text = 'Viola')
+f = ttk.Button(root, command = cambionero, text = 'Nero')
+g = ttk.Button(root, command = cambioverde, text = 'Verde')
+
+b.pack()
+c.pack()
+f.pack()
+g.pack()
+l.pack()
+
+root.mainloop()
+
+ES3 
+import tkinter
+
+
+from tkinter import *
+from tkinter import ttk
+from random import randint
+
+root = Tk()
+root.title("Colori")
+infile = open("sabato.txt", "r")
+listatext = []
+for line in infile:
+    line.strip()
+    listatext.append(line)
+
+parent = ttk.Frame(root)
+parent.grid(column=0,row=0,sticky="nsew")
+
+fruttaVar = StringVar(value=listatext)
+l = Listbox(parent, listvariable=fruttaVar, height=3)
+l.grid(column=0,row=0,sticky="nsew")
+s = ttk.Scrollbar(parent, orient=VERTICAL, command=l.yview)
+s.grid(column=1,row=0,sticky="nsew")
+l['yscrollcommand'] = s.set
+infile.close()
+
 
 
 
