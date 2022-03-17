@@ -85,7 +85,46 @@ s = ttk.Scrollbar(parent, orient=VERTICAL, command=l.yview)
 s.grid(column=1,row=0,sticky="nsew")
 l['yscrollcommand'] = s.set
 infile.close()
+root.mainloop()
 
+ES4
+import tkinter
+
+from tkinter import *
+from tkinter import ttk
+
+
+
+root = Tk()
+spinval = StringVar()
+def aggiungere2():
+  s = ttk.Spinbox(root, from_=0, to=100.0, increment = 2, textvariable=spinval)
+  s.pack()
+def aggiungere4():
+  s = ttk.Spinbox(root, from_=0, to=100.0, increment = 4, textvariable=spinval)
+  s.pack()
+def aggiungere8():
+  s = ttk.Spinbox(root, from_=0, to=100.0, increment = 8, textvariable=spinval)
+  s.pack()
+
+def aggiungere1():
+  s = ttk.Spinbox(root, from_=0, to=100.0, increment = 1, textvariable=spinval)
+  s.pack()
+
+
+button4 = Button(root, text = 'di 4 in 4', command = aggiungere4)
+button2 = Button(root, text = 'di 2 in 2', command = aggiungere2)
+button8 = Button(root, text = 'di 8 in 8', command = aggiungere8)
+button1 = Button(root, text = 'di 1 in 1', command = aggiungere1)
+button2.pack()
+button4.pack()
+button8.pack()
+#Label1 = Label(root, text = 'Hello World')
+#Label2 = Label(root, text = 'Stronzone')
+
+#Label1.grid(row = 0, column = 0)
+#Label2.grid(row = 2, column = 1)
+root.mainloop()
 
 
 
