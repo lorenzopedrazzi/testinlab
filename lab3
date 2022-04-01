@@ -21,6 +21,7 @@ b = ttk.Button(root, command=cambiocolore, text='Cambio')
 b.pack()
 l.pack()
 
+
 root.mainloop()
 
 
